@@ -1,0 +1,9 @@
+#!/bin/bash
+
+wall=$(find ~/Pictures/Wallpapers -type f | fuzzel --dmenu)
+
+[ -z "$wall" ] && exit
+
+swww img "$wall" \
+    --transition-type grow \
+    --transition-duration 0.6
