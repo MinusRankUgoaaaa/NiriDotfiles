@@ -1,0 +1,138 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FantasqueSansM Nerd Font";
+    font-size: 15px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(24,24,27,.92);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 6px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #8b8b8b;
+
+    padding: 0 10px;
+    margin: 4px 2px;
+
+    border-radius: 8px;
+
+    transition: all 150ms ease;
+}
+
+#workspaces button:hover,
+#workspaces button.active {
+    background: #5e81ac;
+    color: #ffffff;
+}
+
+#clock {
+    background: #5e81ac;
+    color: #ffffff;
+
+    padding: 0 12px;
+    margin: 4px 3px;
+
+    border-radius: 10px;
+}
+
+#network,
+#bluetooth,
+#pulseaudio,
+#battery {
+    padding: 5px 10px 0px 10px;
+    border-bottom: 2px solid #5e81ac;
+    margin: 0px 0px 2px 0px;
+}
+
+#custom-niri-window {
+    padding: 0 10px;
+    border-bottom: 2px solid #5e81ac;
+}
+
+/*
+#network,
+#bluetooth,
+#pulseaudio,
+#battery {
+    background: #5e81ac;
+    color: #ffffff;
+
+    padding: 0 12px;
+    margin: 4px 3px;
+
+    border-radius: 10px;
+
+    transition: all 150ms ease;
+}
+*/
+
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover {
+    background: #5e81ac;
+    color: #ffffff;
+    border-radius: 10px; 
+
+    border: none;
+    
+    transition: all 150ms ease;
+    padding: 3px 10px 0px 10px;
+    margin: 2px 0px 3px 0px;
+}
+
+#cpu,
+#memory,
+#temperature {
+    padding: 5px 5px 0px 5px;
+    border-bottom: 2px solid #5e81ac;
+    margin: 0px 0px 2px 0px;
+}
+
+#tray {
+    /*padding: 0 8px;
+    margin: 4px 6px;
+    background: transparent;*/
+
+    padding: 2px 15px;
+    margin: 4px 2px;
+
+    border-radius: 8px;
+
+    transition: all 150ms ease;
+    background: #5e81ac;
+}
+
+#workspaces button {
+    color: #b8b8b8;
+
+    margin: 4px 2px;
+    padding: 0 10px;
+
+    border-radius: 10px;
+
+    transition: all 150ms ease;
+}
+
+#workspaces button.active {
+    background: #5e81ac;
+    color: white;
+}
+
+/* ---------- Tooltip ---------- */
+
+tooltip {
+    background: #5e81ac;
+    color: #ffffff;
+
+    border-radius: 8px;
+    padding: 8px;
+}

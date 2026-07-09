@@ -1,9 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-wall=$(find ~/Pictures/Wallpapers -type f | fuzzel --dmenu)
+set -e
 
-[ -z "$wall" ] && exit
+WALL="$1"
 
-swww img "$wall" \
+if [ -z "$WALL" ]; then
+    WALL=$(find "$HOME/Projects/dotfiles/wallpapers" -type f | shuf -n1)
+fi
+
+pgrep swww-daemon >/dev/null || swww-daemon
+
+swww img "$WALL" \
     --transition-type grow \
-    --transition-duration 0.6
+    --transition-pos 0.5,0.5 \
+    --transition-duration 0.8
+
+# Тут потім буде:
+# matugen image "$WALL"
+# ~/.config/waybar/reload.sh
+# makoctl reload

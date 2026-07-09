@@ -1,0 +1,93 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 8,
+
+    "modules-left": [
+        "niri/workspaces"
+        //"custom/niri-window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "battery",
+        "cpu",
+        "memory",
+        "temperature",
+        "tray"
+    ],
+
+    "clock": {
+        "format": "{:%H:%M}"
+    },
+
+    "network": {
+        "format-wifi": "󰤨  {essid}",
+        "format-disconnected": "󰤭 Disabled!",
+        "tooltip-format": "{essid}\n{ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁",
+        "format-icons": [
+            "󰕿",
+            "󰖀",
+            "󰕾"
+        ],
+        "on-click": "pavucontrol"
+    },
+
+    "cpu": {
+        "format": "󰍛 {usage}%"
+    },
+
+    "memory": {
+        "format": "󰘚 {}%"
+    },
+
+    "temperature": {
+        "critical-threshold": 85,
+        "format": "󰔏 {temperatureC}°"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "bluetooth": {
+        "format": "",
+        "on-click": "blueman-manager"
+    }
+
+//    "custom/niri-window": {
+//        //"exec": "niri msg focused-window | grep 'Title:' | sed -E 's/.*\"(.*)\".*/\\1/'",
+//        "interval": 0.5,
+//        "format": "{}",
+//        "tooltip": false
+//    }
+}
