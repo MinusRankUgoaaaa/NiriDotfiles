@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: "FantasqueSansM Nerd Font";
     font-size: 15px;
-    min-height: 0;
+    min-height: 20px;
 }
 
 window#waybar {
@@ -44,6 +44,12 @@ window#waybar {
     border-radius: 10px;
 }
 
+#window {
+    padding: 5px 10px 0px 10px;
+    border-bottom: 2px solid #5e81ac;
+    margin: 0px 0px 2px 0px;
+}
+
 #network,
 #bluetooth,
 #pulseaudio,
@@ -53,42 +59,36 @@ window#waybar {
     margin: 0px 0px 2px 0px;
 }
 
-#custom-niri-window {
-    padding: 0 10px;
-    border-bottom: 2px solid #5e81ac;
-}
-
-/*
-#network,
-#bluetooth,
-#pulseaudio,
-#battery {
+#tray,
+#language {
+    font-size: 13px;
     background: #5e81ac;
     color: #ffffff;
 
     padding: 0 12px;
-    margin: 4px 3px;
+    margin: 4px 0px;
 
     border-radius: 10px;
-
-    transition: all 150ms ease;
 }
-*/
 
 #network:hover,
 #bluetooth:hover,
 #pulseaudio:hover {
-    background: #5e81ac;
-    color: #ffffff;
-    border-radius: 10px; 
-
-    border: none;
-    
-    transition: all 150ms ease;
-    padding: 3px 10px 0px 10px;
-    margin: 2px 0px 3px 0px;
+    padding: 2px 10px 0px 10px;
+    border-bottom: 2px solid #5e81ac;
+    margin: 0px 0px 2px 0px;
+    transition: all 80ms ease;
 }
 
+window#waybar.empty #window {
+    border-bottom-color: transparent;
+}
+
+window#waybar:not(.empty) #window {
+    border-bottom-color: #5e81ac;
+}
+
+/* Comment this section if u want
 #cpu,
 #memory,
 #temperature {
@@ -96,20 +96,7 @@ window#waybar {
     border-bottom: 2px solid #5e81ac;
     margin: 0px 0px 2px 0px;
 }
-
-#tray {
-    /*padding: 0 8px;
-    margin: 4px 6px;
-    background: transparent;*/
-
-    padding: 2px 15px;
-    margin: 4px 2px;
-
-    border-radius: 8px;
-
-    transition: all 150ms ease;
-    background: #5e81ac;
-}
+*/
 
 #workspaces button {
     color: #b8b8b8;

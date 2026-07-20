@@ -57,7 +57,7 @@ input {
 
 // Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
-    // off
+    //off
 
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
     mode "1920x1080@144.000"
@@ -74,7 +74,7 @@ output "DP-1" {
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
     mode "1920x1080@200.059"
     scale 1
-
+    variable-refresh-rate
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
     position x=1600 y=0
@@ -320,6 +320,14 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    allow-tearing true
+}
+environment {
+    // Змушує XWayland ігри бачити твої реальні 200 Гц замість стандартних 60/144
+    "XWAYLAND_FORCE_DISABLE_ASYNC_FLIPS" "0"
+}
+
 binds {
     Mod+B { spawn "chromium"; }
     Mod+E { spawn "thunar"; }
@@ -529,4 +537,7 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+}
+debug {
+    render-drm-device "/dev/dri/by-path/pci-0000:01:00.0-render"
 }
